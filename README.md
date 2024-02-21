@@ -1,1 +1,1 @@
-# Improving-Grid-Efficiency-Through-the-Prediction-of-AC-Power-Utilizing-Inverters-and-Sensors-Data
+# Enhancing-Grid-Efficiency-Through-AC-Power-Prediction-with-Inverter-and-Sensor-Data.
