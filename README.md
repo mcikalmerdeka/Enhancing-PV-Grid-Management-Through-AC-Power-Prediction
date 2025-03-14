@@ -14,6 +14,8 @@
 
 - PV modules are created by connecting numerous solar cells, and these modules are further linked to form a PV array suitable for applications ranging from small-scale to high-power generation. In a Solar Energy Generating System (SEGS) displayed above, solar panels convert solar energy into Direct Current (DC). This DC is then routed through an inverter to transform it into Alternating Current (AC), making it more compatible with transmission through centralized power grids.
 
+> One of the challenges that needs to be solved is the unpredictability of solar power generation due to weather conditions, panel degradation, and maintenance needs. Grid operators struggle with integrating fluctuating solar energy into the power grid efficiently. There's a critical need for accurate AC-power prediction models that can forecast generation capacity days in advance, allowing for better load balancing and resource allocation. Additionally, the lack of accessible, standardized methods to identify when panels require cleaning or maintenance leads to unnecessary efficiency losses. This project aims to develop predictive models that address these gaps, helping plant operators and grid managers optimize solar energy integration while maximizing power output through timely maintenance interventions.
+
 ## Dataset Source
 
 This data has been gathered at two solar power plants in India over a 34 day period. It has two pairs of files - each pair has one power generation dataset and one sensor readings dataset. The power generation datasets are gathered at the inverter level - each inverter has multiple lines of solar panels attached to it. The sensor data is gathered at a plant level - single array of sensors optimally placed at the plant.
