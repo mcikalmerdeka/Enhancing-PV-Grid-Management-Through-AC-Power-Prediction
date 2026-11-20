@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+
+# AXIOM
+.agents/
+.env.axiom
+opencode.json.venv/
+
+# Superpowers
+docs/superpowers/
