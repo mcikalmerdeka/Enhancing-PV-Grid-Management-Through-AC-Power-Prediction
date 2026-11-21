@@ -27,3 +27,49 @@ Dataset Kaggle Link : https://www.kaggle.com/datasets/anikannal/solar-power-gene
 - Analyzing the potential AC-Power generated in next couple of days for better grid management.
 
 - Identify the need for panel cleaning/maintenance through sensor and inverter data.
+
+## Running the Project
+
+### 1. Regenerate the models
+
+Open `Prediction of AC-Power.ipynb` in Jupyter and run all cells, or execute the same code headlessly:
+
+```powershell
+.\.venv\Scripts\python.exe tests\verify_notebook.py
+```
+
+The notebook writes `models/gradientboosting_tuned.joblib`, `models/randomforest_tuned.joblib`, and
+`models/manifest.json`. The manifest is authoritative: the app reads it, so a re-run that changes the winning
+models does not require editing app code.
+
+### 2. Launch the Studio
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run main.py
+```
+
+The app refuses to start if the manifest is missing or a bundle does not match the manifest's feature list.
+Regenerate the models first. Tabs: **Predict** (one plant/hour with median-condition prefill), **Batch** (score a
+CSV), **Insights** (metrics, per-plant error, drivers), **About** (model card and limitations).
+
+### 3. Run the tests
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+`tests/verify_notebook.py` executes the notebook's code cells in one process, so no `nbformat`/`nbclient`
+dependency is needed.
+
+## Project Structure
+
+```
+Prediction of AC-Power.ipynb   six-stage analysis; writes models/
+main.py                        Streamlit entry point
+ac_power/                      app package (config, schema, data, analytics, ui, views)
+utils/                         vendored ML toolkit
+data/                          generation and weather CSVs, batch example
+models/                        generated bundles and manifest.json
+tests/                         unittest suite and notebook verifier
+docs/utils-bug-report.md       defects found in the vendored toolkit
+```
