@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-11-21T14:53:20",
+  "target": "AC_POWER",
+  "feature_columns": [
+    "IRRADIATION",
+    "AMBIENT_TEMPERATURE",
+    "HOUR",
+    "PLANT_ID"
+  ],
+  "split": {
+    "train_end": "2020-06-09 18:00:00",
+    "test_start": "2020-06-10 06:30:00"
+  },
+  "rows": {
+    "train": 2322,
+    "test": 717
+  },
+  "models": [
+    {
+      "label": "GradientBoosting (tuned)",
+      "file": "gradientboosting_tuned.joblib"
+    },
+    {
+      "label": "RandomForest (tuned)",
+      "file": "randomforest_tuned.joblib"
+    }
+  ]
+}
